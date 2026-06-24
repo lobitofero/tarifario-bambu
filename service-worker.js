@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tarifario-bambu-v1';
+const CACHE_NAME = 'tarifario-bambu-v2';
 const ARCHIVOS = [
   './index.html',
   './manifest.json',
