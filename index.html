@@ -205,7 +205,7 @@
         function actualizar(){const total=precioBase+precioArt;document.getElementById('precioGrande').textContent='S/ '+total.toFixed(2);hablarPrecio(total);}
         function cerrarModal(){document.getElementById('modalPrecio').style.display='none';}
         function limpiarCargas(){const p=PARADEROS.find(p=>p.nombre===document.getElementById('nombreParaderoModal').textContent);if(p){const oi=PARADEROS.indexOf(p);CARGAS.forEach((g,gi)=>{if(g.subtipos){g.subtipos.forEach((_,si)=>{cargasCants['cs_'+gi+'_'+si+'_'+oi]=0;});}else{cargasCants['c_'+gi+'_'+oi]=0;}});actualizarAdiBadge(oi);}artSel=null;precioArt=0;document.querySelectorAll('.articulo-btn').forEach(b=>b.classList.remove('seleccionado'));precioBase=p?.precio||0;nombreActual=p?.nombre||'';document.getElementById('detalleCargas').style.display='none';actualizar();}
-        function buscar(){const t=document.getElementById('buscador').value.trim().toUpperCase();renderItems(t?PARADEROS.filter(p=>p.nombre.includes(t)):PARADEROS);}
+        function buscar(){const t=document.getElementById('buscador').value.trim().toLowerCase();renderItems(t?PARADEROS.filter(p=>p.nombre.toLowerCase().includes(t)):PARADEROS);}
         window.onclick=e=>{if(e.target===document.getElementById('modalPrecio'))cerrarModal();};
         renderItems();
     </script>
